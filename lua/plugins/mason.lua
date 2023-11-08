@@ -1,5 +1,5 @@
 --return function()
-  --print('hello from ~/config/nvim/lua/plugins/mason.lua')
+  -- print('hello from ~/config/nvim/lua/plugins/mason.lua')
   require("mason").setup()
   local installed_pkgs = require('mason-registry').get_installed_packages()
   local install_confirm = ''

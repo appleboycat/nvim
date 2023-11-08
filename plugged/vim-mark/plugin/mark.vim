@@ -268,7 +268,7 @@ if !hasmapto('<Plug>MarkSet', 'x')
 endif
 " No default mapping for <Plug>MarkIWhiteSet.
 if !hasmapto('<Plug>MarkRegex', 'n')
-	nmap <unique> <Leader>r <Plug>MarkRegex
+	" nmap <unique> <Leader>r <Plug>MarkRegex
 endif
 if !hasmapto('<Plug>MarkRegex', 'x')
 	xmap <unique> <Leader>r <Plug>MarkRegex

@@ -4,7 +4,8 @@ return require('packer').startup(function(use)
 
   use {'preservim/nerdcommenter'}
 
-  ----use {'neovim/nvim-lspconfig', 'williamboman/nvim-lsp-installer'}
+  ------use {'neovim/nvim-lspconfig', 'williamboman/nvim-lsp-installer'}
+  use {"williamboman/mason.nvim"}
   use {"williamboman/mason.nvim", config = require('plugins.mason')}
 
   use {"williamboman/mason-lspconfig.nvim"}
@@ -32,10 +33,10 @@ return require('packer').startup(function(use)
   use {
     'phaazon/hop.nvim',
     branch = 'v2', -- optional but strongly recommended
-    config =
-      -- you can configure Hop the way you like here; see :h hop-config
-      require('plugins.hop')
-      --require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+    --config =
+      ---- you can configure Hop the way you like here; see :h hop-config
+      --require('plugins.hop')
+      ----require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
   }
 
 
@@ -63,6 +64,7 @@ return require('packer').startup(function(use)
   -- Adds extra functionality over rust analyzer
   --use("simrat39/rust-tools.nvim")
   --use {'simrat39/rust-tools.nvim', config = function() require('cfg/rust-tools') end}
+  use {'simrat39/rust-tools.nvim'}
   use {'simrat39/rust-tools.nvim', config = require('plugins.rust-tools') }
   use 'rust-lang/rust.vim'
   --Show function signature when you type
@@ -94,6 +96,7 @@ return require('packer').startup(function(use)
   -- Optional
   use("nvim-lua/popup.nvim")
   use("nvim-lua/plenary.nvim")
+  use{"nvim-telescope/telescope.nvim"}
   use{"nvim-telescope/telescope.nvim", config = require('plugins.telescope')}
 
   -- Some color scheme other then default
@@ -135,6 +138,7 @@ return require('packer').startup(function(use)
   -- status line
   use {"kyazdani42/nvim-web-devicons"}
   --
+  use {'nvim-lualine/lualine.nvim'}
   use {'nvim-lualine/lualine.nvim', requires = {"kyazdani42/nvim-web-devicons", opt = true}, config = require('plugins.lualine') }
   --
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
@@ -166,6 +170,7 @@ return require('packer').startup(function(use)
   }
   --
   --use {'simrat39/symbols-outline.nvim', config = function() require("symbols-outline").setup() end}
+  use {'simrat39/symbols-outline.nvim'}
   use {'simrat39/symbols-outline.nvim', config = require('plugins.symbols-outline')}
   vim.keymap.set('n', '<F9>', ':SymbolsOutline<cr>')
   --use {'preservim/tagbar'}
@@ -211,10 +216,13 @@ return require('packer').startup(function(use)
   --for git
   --download failed
   use {
-    'lewis6991/gitsigns.nvim',
-    config = 
-      require('plugins.gitsigns')
+    'lewis6991/gitsigns.nvim'
   }
+  -- use {
+    -- 'lewis6991/gitsigns.nvim',
+    -- config = 
+      -- require('plugins.gitsigns')
+  -- }
    --use {'APZelos/blamer.nvim'}
    use 'rhysd/git-messenger.vim'
    use {'tpope/vim-fugitive'}
