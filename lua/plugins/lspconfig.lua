@@ -179,11 +179,12 @@ local keymap_opts = { buffer = buffer }
 -- Code navigation and shortcuts
 vim.keymap.set("n", "K", vim.lsp.buf.hover, keymap_opts)
 vim.keymap.set("n", "<c-k>", vim.lsp.buf.signature_help, keymap_opts)
+
 vim.keymap.set("n", ",g", vim.lsp.buf.definition, keymap_opts)
 vim.keymap.set("n", ",r", vim.lsp.buf.references, keymap_opts)
 vim.keymap.set("n", ",i", vim.lsp.buf.implementation, keymap_opts)
-vim.keymap.set("n", ",a", vim.lsp.buf.code_action, keymap_opts)
 vim.keymap.set("n", ",t", vim.lsp.buf.type_definition, keymap_opts)
+vim.keymap.set("n", ",a", vim.lsp.buf.code_action, keymap_opts)
 vim.keymap.set("n", ",0", vim.lsp.buf.document_symbol, keymap_opts)
 vim.keymap.set("n", ",w", vim.lsp.buf.workspace_symbol, keymap_opts)
 vim.keymap.set('n', 'rn', vim.lsp.buf.rename, keymap_opts)
